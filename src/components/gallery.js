@@ -3,10 +3,9 @@ import { useSelector } from "react-redux";
 
 export const Gallery =  () => {
     const wallet = useSelector((state)=> state.wallet);
-    const imageBase = "https://ipfs.io/ipfs/QmdaktDJMQisPo8prCC7cDwW5FNUKTv9s72nS8yn65Ao6P/"
-
+    
     const displayNFTs = wallet.map( (nft) => 
-        <s.Img src={imageBase  +nft + ".png"} key={nft}></s.Img>
+        <s.Img src={require("../assets/images/" + nft + ".png").default} key={nft}></s.Img>
      );
 
         return(

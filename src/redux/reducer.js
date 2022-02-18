@@ -1,14 +1,3 @@
-import * as PointlessNiftys from "../contracts/PointlessNiftys.json";
-import Web3 from "web3";
-import { useDispatch } from "react-redux";
-const web3 = new Web3(window.ethereum);
-const contract = new web3.eth.Contract(PointlessNiftys.abi, "0x3dDc5972EB80C47F798ffEdF8841bb2BD9E045f1");
-
-const checkAccounts = async () => {
-    const accounts = await web3.eth.getAccounts();
-    console.log(accounts.length);
-    return accounts.length;
-}
 
 const initialState = {
     connected: false,

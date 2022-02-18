@@ -671,7 +671,7 @@
   "sourceMap": "66:352:12:-:0;;;90:33;;;-1:-1:-1;;;;;;90:33:12;113:10;90:33;;;66:352;;;;;;;;;;;;;;;;",
   "deployedSourceMap": "66:352:12:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;127:36;;;;;;;;;160:25:14;;;148:2;133:18;127:36:12;;;;;;;;90:33;;;;;-1:-1:-1;;;;;90:33:12;;;;;;-1:-1:-1;;;;;360:32:14;;;342:51;;330:2;315:18;90:33:12;196:203:14;313:103:12;;;;;;:::i;:::-;;:::i;:::-;;;225:5;;-1:-1:-1;;;;;225:5:12;211:10;:19;196:101;;;;-1:-1:-1;;;196:101:12;;791:2:14;196:101:12;;;773:21:14;830:2;810:18;;;803:30;869:34;849:18;;;842:62;-1:-1:-1;;;920:18:14;;;913:49;979:19;;196:101:12;;;;;;;;375:24:::1;:36:::0;313:103::o;404:180:14:-;463:6;516:2;504:9;495:7;491:23;487:32;484:52;;;532:1;529;522:12;484:52;-1:-1:-1;555:23:14;;404:180;-1:-1:-1;404:180:14:o",
   "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.4.22 <0.9.0;\n\ncontract Migrations {\n  address public owner = msg.sender;\n  uint public last_completed_migration;\n\n  modifier restricted() {\n    require(\n      msg.sender == owner,\n      \"This function is restricted to the contract's owner\"\n    );\n    _;\n  }\n\n  function setCompleted(uint completed) public restricted {\n    last_completed_migration = completed;\n  }\n}\n",
-  "sourcePath": "C:\\Users\\Marco\\Documents\\School\\Blockchain dev\\pointless_niftys_4\\contracts\\Migrations.sol",
+  "sourcePath": "C:\\Users\\Marco\\Documents\\blockchain\\pointless niftys\\contracts\\Migrations.sol",
   "ast": {
     "absolutePath": "project:/contracts/Migrations.sol",
     "exportedSymbols": {
@@ -1482,10 +1482,40 @@
       "links": {},
       "address": "0xD85C9e69dd4443eFC4a36102ef2A492dA40B4764",
       "transactionHash": "0x8ee96052bd8fd7f88c5da355fa47517e47d3b5f5c7e5d988e1ff639e1ad41827"
+    },
+    "1644996375905": {
+      "events": {},
+      "links": {},
+      "address": "0x48FBF0A8E62c05ba7C21145b452c08A133FfAEca",
+      "transactionHash": "0x0d8033a28f12f56b790c6b1410a14f72cbae71606797d7e20c9e1bca1f508ca5"
+    },
+    "1645074839344": {
+      "events": {},
+      "links": {},
+      "address": "0x6DfD8E3Ba116AE5d7CD1D85F90746002EfE20fAD",
+      "transactionHash": "0x14003c31195574dfda2bf3c1a0acd4cfed522c80d6d9db5c0842bf2976dc72b9"
+    },
+    "1645079985260": {
+      "events": {},
+      "links": {},
+      "address": "0x22351E2965a304C7295C589D66eD6D02d537a96c",
+      "transactionHash": "0x18496f22dc8a7cb1c829ae1df164ae9aa66d3b82ba9ac37fd042c1b67815a469"
+    },
+    "1645081475671": {
+      "events": {},
+      "links": {},
+      "address": "0x2A447C85502A6C18F9fD172718A756185efcf65D",
+      "transactionHash": "0x583309060da033dcac93cb22951fc53ae693c3eb4aa7c67ecb04c9d1431d718d"
+    },
+    "1645095761492": {
+      "events": {},
+      "links": {},
+      "address": "0x2cDd7EBabaEb79d2a87Fc674eb372De36410ac17",
+      "transactionHash": "0xe0c1fc1d22b2bdd0d10632f0c951721d091a1fe22a62265ca4e53e63f1106da0"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2022-02-01T02:10:21.735Z",
+  "updatedAt": "2022-02-17T11:10:35.957Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

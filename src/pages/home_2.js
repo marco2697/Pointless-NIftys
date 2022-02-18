@@ -22,7 +22,7 @@ export const HomePage2 = () => {
     const cycleImages = () => {
         while(count <= maxSupply){ 
             console.log(image);
-            if(count === maxSupply){
+            if(count == maxSupply){
                count = 1;
             }   
             count++;

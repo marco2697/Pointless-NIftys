@@ -13,9 +13,8 @@ export const MintPage = () => {
     const message = useSelector((state)=> state.message);
     const totalSupply = useSelector((state)=> state.totalSupply);
     const maxSupply = useSelector((state)=> state.maxSupply);
-    const wallet = useSelector((state)=> state.wallet); 
 
-    if(totalSupply === maxSupply && connected == true){
+    if(totalSupply == maxSupply && connected == true){
         dispatch(maxSupplyReached());
     }
 
@@ -33,7 +32,7 @@ export const MintPage = () => {
                                     <s.TextSubTitle>Loading...</s.TextSubTitle>
                                     </>
                                 ):(
-                                    totalSupply === maxSupply ? (
+                                    totalSupply == maxSupply ? (
                                         <>
                                             <a href="https://opensea.io/" target="_blank">
                                             <s.Button 

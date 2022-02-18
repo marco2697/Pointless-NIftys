@@ -1,5 +1,4 @@
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import { ConnectButton } from "../components/connector";
 import { Gallery } from "../components/gallery";
 import * as s from '../styles/styles';

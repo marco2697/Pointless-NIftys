@@ -1,4 +1,4 @@
-import styled, {keyframes} from 'styled-components';
+import styled from 'styled-components';
 import {Link} from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -11,8 +11,7 @@ export const Page = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: #F8E5E5;
-  padding: ${props => props.pad};
-`;
+  padding: ${props => props.pad};`;
 
 export const Container = styled.div`
   display: flex;
@@ -220,10 +219,6 @@ export const TextSmall = styled.p`
   }
 `;
 
-const buttonAmination = keyframes`
-     from {background-color: blue;}
-     to {background-color: red;
-`;
 export const Button = styled.button`
   height: 50px;
   width: 200px;

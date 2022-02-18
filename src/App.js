@@ -2,10 +2,11 @@ import { Routes, Route} from "react-router-dom";
 import './App.css';
 import * as s from './styles/styles';
 import { NavBar, NavBarMobile } from './components/navbar';
-import { MintPage, _MintPage} from './pages/mint';
+import { MintPage} from './pages/mint';
 import { WalletPage } from './pages/wallet';
 import { useEffect, useState} from 'react';
 import { HomePage } from './pages/home';
+
 
 
 function App() {

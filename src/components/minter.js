@@ -13,12 +13,12 @@ export const MintButton = () => {
         const web3 = new Web3(window.ethereum);  
         const accounts = await web3.eth.getAccounts();
         const account = accounts[0];
-        const contract = new web3.eth.Contract(PointlessNiftys.abi, "0x14Ca0900b3a3d5A339478E0F710903fb3612Da61");
+        const contract = new web3.eth.Contract(PointlessNiftys.abi, "0xffEA65eF514Abff21Ce345D18be91b47C477B5AE");
         dispatch(attemptMint());
 
         try{
         await contract.methods.mint(account, 1)
-            .send({ from: account, value: 1000000000000000000 })
+            .send({ from: account, value: web3.utils.toWei('0.05', 'ether') })
             .once("error", (err) => {
                 console.log(err)
             })
