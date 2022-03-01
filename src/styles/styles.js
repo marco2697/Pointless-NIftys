@@ -11,7 +11,8 @@ export const Page = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: #F8E5E5;
-  padding: ${props => props.pad};`;
+  padding: ${props => props.pad};
+  `;
 
 export const Container = styled.div`
   display: flex;

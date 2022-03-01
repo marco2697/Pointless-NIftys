@@ -6,11 +6,16 @@ import { MintPage} from './pages/mint';
 import { WalletPage } from './pages/wallet';
 import { useEffect, useState} from 'react';
 import { HomePage } from './pages/home';
+import { useDispatch } from "react-redux";
+import { connectFailed } from "./redux/actions";
+
 
 
 
 function App() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const dispatch = useDispatch();
+
   useEffect( ()=>{
     const resizeWindow = () => {
       setScreenWidth(window.innerWidth);
@@ -18,14 +23,19 @@ function App() {
     window.addEventListener('resize', resizeWindow);
   }, []);
 
-   window.ethereum.on('accountsChanged', () => {
-       window.location.reload();
-    });
-    window.ethereum.on('chainChanged', () => {
-       window.location.reload();
-    });
+  useEffect(() => {
+         if(window.ethereum){
+           window.ethereum.on('accountsChanged', () => {
+            window.location.reload();
+             });
 
-
+            window.ethereum.on('chainChanged', () => {
+            window.location.reload();
+            });
+         }else{
+           dispatch(connectFailed("install metamask first"))
+         }
+  });
 
   return (
     <s.Page>

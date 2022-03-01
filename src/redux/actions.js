@@ -35,9 +35,15 @@ export const maxSupplyReached = () => {
         type: "MAX_SUPPLY_REACHED"
     }
 }
-export const connectFailed = () => {
+export const maxWalletReached = () => {
     return{
-        type: "CONNECT_FAILED"
+        type: "MAX_WALLET_REACHED"
+    }
+}
+export const connectFailed = (payload) => {
+    return{
+        type: "CONNECT_FAILED",
+        payload: payload
     }
 }
 

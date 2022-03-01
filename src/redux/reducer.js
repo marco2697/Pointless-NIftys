@@ -39,7 +39,7 @@ const rootReducer = (state = initialState, action) => {
             return{
                 ...state,
                 loading:false,
-                message: "failed to connect, please try again"
+                message: action.payload
             }
         case "ATTEMPTING_MINT":
             return{
@@ -67,6 +67,12 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 message: "all nfts have been minted"
             }
+        case "MAX_WALLET_REACHED":
+            return{
+                ...state,
+                connected: true,
+                message: "you cant mint more than 8 pointless niftys"
+            }  
         default:
             return{
                 ...initialState

@@ -2,7 +2,7 @@ import { ConnectButton } from "../components/connector";
 import * as s from '../styles/styles';
 import { useDispatch, useSelector } from "react-redux";
 import { MintButton } from "../components/minter";
-import { maxSupplyReached } from "../redux/actions";
+import { maxSupplyReached, maxWalletReached } from "../redux/actions";
 
 
 export const MintPage = () => {
@@ -13,9 +13,15 @@ export const MintPage = () => {
     const message = useSelector((state)=> state.message);
     const totalSupply = useSelector((state)=> state.totalSupply);
     const maxSupply = useSelector((state)=> state.maxSupply);
+    const wallet = useSelector((state)=> state.wallet);
 
     if(totalSupply == maxSupply && connected == true){
         dispatch(maxSupplyReached());
+    }
+    if(connected == true){
+        if(wallet.length >= 8){
+            dispatch(maxWalletReached());
+        };
     }
 
         return(
@@ -34,7 +40,7 @@ export const MintPage = () => {
                                 ):(
                                     totalSupply == maxSupply ? (
                                         <>
-                                            <a href="https://opensea.io/" target="_blank">
+                                            <a href="https://testnets.opensea.io/collection/pointless-niftys-ydbc6lzs2a" target="_blank">
                                             <s.Button 
                                                 type="submit"
                                                 bg="#C39EA0"
@@ -44,7 +50,19 @@ export const MintPage = () => {
                                         </>
                                         
                                     ):(
-                                        <MintButton></MintButton>
+                                        wallet.length >= 8 ? (
+                                            <>
+                                            <a href="https://testnets.opensea.io/collection/pointless-niftys-ydbc6lzs2a" target="_blank">
+                                            <s.Button 
+                                                type="submit"
+                                                bg="#C39EA0"
+                                              > OpenSea
+                                            </s.Button>
+                                            </a>
+                                            </>
+                                        ):(
+                                            <MintButton></MintButton>
+                                        )
                                     )
                                 )}
                                 </>
